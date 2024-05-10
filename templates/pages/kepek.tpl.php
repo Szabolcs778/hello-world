@@ -20,9 +20,9 @@
     <meta charset="utf-8">
     <title>Galéria</title>
     <style type="text/css">
-        div#galeria {margin: 0 auto; width: 620px;}
+        div#galeria {margin: 0 auto; width: 100%;}
         div.kep { display: inline-block; }
-        div.kep img { width: 200px; }
+        div.kep img { width: 100%; }
     </style>
 </head>
 <body>
