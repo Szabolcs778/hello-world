@@ -1,48 +1,39 @@
 <?php
-    // Alkalmazás logika:
-    include('./includes/config.inc.php');
-    
-    // adatok összegyűjtése:    
-    $kepek = array();
-    $olvaso = opendir($MAPPA);
-    while (($fajl = readdir($olvaso)) !== false)
-        if (is_file($MAPPA.$fajl)) {
-            $vege = strtolower(substr($fajl, strlen($fajl)-4));
-            if (in_array($vege, $TIPUSOK))
-                $kepek[$fajl] = filemtime($MAPPA.$fajl);            
-        }
-    closedir($olvaso);
-    
-    // Megjelenítés logika:
-?><!DOCTYPE html>
-<html>
+    $kepek_lekerese_url = './includes/kepek_lekerese.php';
+?>
+<!DOCTYPE html>
+<html lang="hu">
 <head>
-    <meta charset="utf-8">
-    <title>Galéria</title>
-    <style type="text/css">
-        div#galeria {margin: 0 auto; width: 100%;}
-        div.kep { display: inline-block; }
-        div.kep img { width: 100%; }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Képek megjelenítése</title>
+    <!-- Bootstrap CSS betöltése -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <div id="galeria">
-    <h1>Galéria</h1>
-    <?php
-    arsort($kepek);
-    foreach($kepek as $fajl => $datum)
-    {
-    ?>
-        <div class="kep">
-            <a href="<?php echo $MAPPA.$fajl ?>">
-                <img src="<?php echo $MAPPA.$fajl ?>">
-            </a>            
-            <p>Név:  <?php echo $fajl; ?></p>
-            <p>Dátum:  <?php echo date($DATUMFORMA, $datum); ?></p>
-        </div>
-    <?php
-    }
-    ?>
+    <div class="container">
+        <h1>Képek megjelenítése</h1>
+        <div class="row" id="kepek_sor"></div>
     </div>
+
+    <!-- jQuery betöltése -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        // jQuery segítségével AJAX kérést küldünk a képek_lekerese.php fájlnak
+        $.get("<?php echo $kepek_lekerese_url; ?>", function(data) {
+            // A válaszban kapott adatokat JSON formátumból tömbbé alakítjuk
+            var kepek = JSON.parse(data);
+            var baseUrl = window.location.origin + '/iskola/beadando_2024_05_09/kepek/';
+            // Iterálunk a képek tömbön és megjelenítjük őket a HTML-ben
+            $.each(kepek, function(index, kep) {
+                $('#kepek_sor').append('<div class="col-md-4"><img src="' + baseUrl + kep + '" class="img-fluid"></div>');
+            });
+        });
+    </script>
+
+
+
+
+
 </body>
 </html>

@@ -1,23 +1,39 @@
-    <form action = "?oldal=belep" method = "post">
-      <fieldset>
-        <legend>Bejlentkezés</legend>
-        <br>
-        <input type="text" name="felhasznalo" placeholder="felhasználó" required><br><br>
-        <input type="password" name="jelszo" placeholder="jelszó" required><br><br>
-        <input type="submit" name="belepes" value="Belépés">
-        <br>&nbsp;
-      </fieldset>
-    </form>
-    <h3>Regisztrálja magát, ha még nem felhasználó!</h2>
-    <form action = "?oldal=regisztral" method = "post">
-      <fieldset>
-        <legend>Regisztráció</legend>
-        <br>
-        <input type="text" name="vezeteknev" placeholder="vezetéknév" required><br><br>
-        <input type="text" name="utonev" placeholder="utónév" required><br><br>
-        <input type="text" name="felhasznalo" placeholder="felhasználói név" required><br><br>
-        <input type="password" name="jelszo" placeholder="jelszó" required><br><br>
-        <input type="submit" name="regisztracio" value="Regisztráció">
-        <br>&nbsp;
-      </fieldset>
-    </form>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form action="?oldal=belep" method="post">
+                <fieldset>
+                    <legend>Bejelentkezés</legend>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="felhasznalo" placeholder="Felhasználó" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="jelszo" placeholder="Jelszó" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" name="belepes">Belépés</button>
+                </fieldset>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <h3>Regisztrálja magát, ha még nem felhasználó!</h3>
+            <form action="?oldal=regisztral" method="post">
+                <fieldset>
+                    <legend>Regisztráció</legend>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="vezeteknev" placeholder="Vezetéknév" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="utonev" placeholder="Utónév" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="felhasznalo" placeholder="Felhasználói név" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="jelszo" placeholder="Jelszó" required>
+                    </div>
+                    <button type="submit" class="btn btn-success" name="regisztracio">Regisztráció</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>

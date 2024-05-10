@@ -5,8 +5,9 @@
 <head>
     <meta charset="utf-8">
     <title><?= $ablakcim['cim'] . ( (isset($ablakcim['mottó'])) ? ('|' . $ablakcim['mottó']) : '' ) ?></title>
-    <link rel="stylesheet" href="./styles/stilus.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="C:/xampp/htdocs/a/beadando_2024_05_09/styles/stilus.css" >
     <?php if(file_exists('./styles/'.$keres['fajl'].'.css')) { ?><link rel="stylesheet" href="./styles/<?= $keres['fajl']?>.css" type="text/css"><?php } ?>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
     <header>
@@ -15,12 +16,12 @@
         <?php if (isset($fejlec['motto'])) { ?><h2><?= $fejlec['motto'] ?></h2><?php } ?>
         <?php if(isset($_SESSION['login'])) { ?>Bejelentkezve: <strong><?= $_SESSION['csn']." ".$_SESSION['un']." (".$_SESSION['login'].")" ?></strong><?php } ?>
     </header>
-		<nav style="text-align: center;">
-			<ul style="list-style-type: none; padding: 0; margin: 0; display: inline-block;">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
+			<ul class="navbar-nav">
 				<?php foreach ($oldalak as $url => $oldal) { ?>
 					<?php if(! isset($_SESSION['login']) && $oldal['menun'][0] || isset($_SESSION['login']) && $oldal['menun'][1]) { ?>
-						<li style="display: inline-block; margin-right: 10px;">
-						<a href="<?= ($url == '/') ? '.' : ('?oldal=' . $url) ?>">
+						<li class="nav-item">
+						<a class="nav-link" href="<?= ($url == '/') ? '.' : ('?oldal=' . $url) ?>">
 						<?= $oldal['szoveg'] ?></a>
 						</li>
 					<?php } ?>
