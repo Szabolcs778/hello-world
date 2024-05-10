@@ -1,0 +1,100 @@
+/* Alap stílusok */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+}
+
+div#galeria {
+
+	margin: 0 auto; width: 100%;
+
+}
+div.kep { 
+	display: inline-block;
+ }
+div.kep img {
+ 	width: 100%; 
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #007bff;
+    color: #fff;
+}
+
+header img {
+    width: auto;
+    height: auto;
+    margin-top: 20px;
+}
+
+/* Wrapper */
+#wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+/* Sidebar */
+aside {
+    flex: 1;
+    background-color: #343a40;
+    color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-right: 20px;
+}
+
+/* Navigation */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin-bottom: 10px;
+}
+
+nav ul li.active {
+    border-right: 5px solid #007bff;
+}
+
+nav ul a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Content */
+#content {
+    flex: 2;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+#content img {
+    max-width: 100%;
+    height: auto;
+    margin: 0 0 20px 20px;
+    border: 3px solid #007bff;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #007bff;
+    color: #fff;
+    
+    margin-top: 20px;
+}
+
+h1, h2, h3, p {
+	text-align: center;
+}
