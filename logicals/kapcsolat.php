@@ -3,7 +3,7 @@ if (isset($_POST['bekuldo']) && isset($_POST['uzenet'])){
 
 	try{
 
-		$dbh = new PDO('mysql:host=localhost;dbname=gyakorlat7', 'root', '',
+		$dbh = new PDO('mysql:host=localhost;dbname=jasz', 'jasz', 'Szaj_89',
                         array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
 	        $dbh->query('SET NAMES utf8 COLLATE utf8_hungarian_ci');
 		$datum=date('Y-m-d H:i:s');
